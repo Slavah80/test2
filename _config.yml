@@ -1,6 +1,6 @@
 title: "Deep Space Security"
 author: "Slava Tarasov"
-description: "Some short description of your blog can go here." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "My first blog post. Maybe no one else will read it, but that's okay. Let's see where this journey takes us." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
@@ -20,7 +20,7 @@ linkedin_username: "slavs"
 #########################################################################################
 theme: "minima"
 
-rss: rss
+# rss: rss
 
 kramdown:
   syntax_highlighter_opts:
@@ -30,13 +30,33 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# plugin: jekyll-titles-from-headings
 titles_from_headings:
   strip_title: true
   collections: true
+
+collections:
+  personal: # collection for personal blog posts
+    output: true
+
+header_pages:
+  - resume.html
+# - archive.html
+#  - books.md # Commenting out for now as putting more focus on pluralsight than reading
+  - bookmarks.md
+  
+home_post_limit: 5
 
 defaults:
   - scope:
       path: ""
       type: post
     values:
-      tags: Other
+      tags:
+        - Other # Add a default tag to all posts
+
+# Disable highlighting to use highlightJS instead
+# highlighter: none # Not supported by GitHub Pages
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
